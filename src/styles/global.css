@@ -1,0 +1,154 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  /* Theme Colors */
+  --theme-matte-black: #090909;
+  --theme-warm-white: #FCFBF8;
+  --theme-charcoal-black: #111111;
+  --theme-premium-white: #FFFFFF;
+  --theme-deep-black: #0B0B0B;
+
+  /* Accent Colors */
+  --accent-luxury-gold: #C8A64E;
+  --accent-champagne-gold: #E5C86A;
+  --accent-dark-navy: #132238;
+  --accent-soft-gray: #F6F6F6;
+
+  /* Fonts */
+  --font-heading-cinzel: 'Cinzel', serif;
+  --font-heading-cormorant: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  background-color: var(--theme-matte-black);
+  color: var(--theme-warm-white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading-cinzel);
+  font-weight: 500;
+}
+
+.cormorant {
+  font-family: var(--font-heading-cormorant);
+}
+
+.inter {
+  font-family: var(--font-body);
+}
+
+/* Luxury container spacing */
+.container-luxury {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+/* Glassmorphism Cards */
+.glass-card-dark {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 166, 78, 0.15); /* Thin gold border */
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-light {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 166, 78, 0.3); /* Thin gold border */
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  color: var(--theme-warm-white);
+}
+
+/* Buttons */
+.btn-luxury {
+  border-radius: 50px; /* Pill */
+  border: 1px solid var(--accent-luxury-gold);
+  background: transparent;
+  color: var(--accent-luxury-gold);
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-luxury:hover {
+  background: var(--accent-luxury-gold);
+  color: var(--theme-matte-black);
+  box-shadow: 0 0 15px rgba(200, 166, 78, 0.4);
+}
+
+/* Text Colors */
+.text-gold {
+  color: var(--accent-luxury-gold) !important;
+}
+
+.text-champagne {
+  color: var(--accent-champagne-gold) !important;
+}
+
+/* Lenis Smooth Scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Utilities */
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+/* Background Utilities */
+.bg-matte-black { background-color: var(--theme-matte-black); color: var(--theme-warm-white); }
+.bg-warm-white { background-color: var(--theme-warm-white); color: var(--theme-matte-black); }
+.bg-charcoal-black { background-color: var(--theme-charcoal-black); color: var(--theme-warm-white); }
+.bg-premium-white { background-color: var(--theme-premium-white); color: var(--theme-matte-black); }
+.bg-deep-black { background-color: var(--theme-deep-black); color: var(--theme-warm-white); }
+
+/* Remove default link styling */
+a {
+  text-decoration: none;
+}
