@@ -1,151 +1,116 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from 'framer-motion';
-import { FaWarehouse, FaBox, FaUsers, FaConciergeBell, FaShoppingCart, FaStar } from 'react-icons/fa';
-
-gsap.registerPlugin(ScrollTrigger);
+import { FaHandshake, FaConciergeBell, FaAward, FaShieldAlt, FaStar } from 'react-icons/fa';
+import { HiOutlineShieldCheck, HiOutlineShoppingCart, HiOutlineRefresh } from 'react-icons/hi';
 
 const HorecaDivision = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const items = sectionRef.current.querySelectorAll('.horeca-item');
-    
-    gsap.fromTo(items,
-      { y: 30, opacity: 0 },
-      {
-        y: 0, opacity: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        }
-      }
-    );
-  }, []);
-
   const strengths = [
-    { title: 'Reliable Supply\nCapacity', icon: <FaWarehouse /> },
-    { title: 'Wide Product\nRange', icon: <FaBox /> },
-    { title: 'Strong Vendor\nRelationships', icon: <FaUsers /> },
-    { title: 'Service\nConsistency', icon: <FaConciergeBell /> },
-    { title: 'Hospitality Market\nExperience', icon: <FaShoppingCart /> },
-    { title: 'Quality-Focused\nOperations', icon: <FaStar /> }
+    { title: 'Reliable\nsupply capability', icon: <HiOutlineShieldCheck size={28} /> },
+    { title: 'Wide\nproduct range', icon: <HiOutlineShoppingCart size={28} /> },
+    { title: 'Strong vendor\nrelationships', icon: <FaHandshake size={28} /> },
+    { title: 'Service\nconsistency', icon: <HiOutlineRefresh size={28} /> },
+    { title: 'Hospitality\nmarket experience', icon: <FaConciergeBell size={28} /> },
+    { title: 'Quality-focused\noperations', icon: <FaAward size={28} /> }
   ];
 
   return (
-    <section id="horeca" className="position-relative overflow-hidden" ref={sectionRef} style={{ backgroundColor: '#FCFBF8', padding: '100px 0', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+    <section id="horeca" className="position-relative" style={{ backgroundColor: '#050709', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       
-      {/* Subtle Background Swoop Lines */}
-      <div className="position-absolute top-0 start-0 w-100 h-100 pointer-events-none" style={{ zIndex: 0, opacity: 0.15 }}>
-        <svg viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ width: '100%', height: '100%' }}>
-          <path d="M1440 0C1000 200 800 600 1440 800" stroke="#C8A64E" strokeWidth="1" strokeDasharray="5 5" />
-          <path d="M1440 50C1050 250 850 650 1440 850" stroke="#C8A64E" strokeWidth="1" />
-          <path d="M1440 100C1100 300 900 700 1440 900" stroke="#C8A64E" strokeWidth="0.5" />
-        </svg>
-      </div>
-
-      {/* Decorative Right Image - Perfect Circular Arc */}
-      <div className="position-absolute top-0 end-0 h-100 d-none d-lg-block" style={{ width: '20%', zIndex: 1, overflow: 'hidden' }}>
-        <div style={{
-          position: 'absolute',
-          top: '-10%',
-          bottom: '-10%',
-          left: '0',
-          width: '200%',
-          borderRadius: '50%',
-          borderLeft: '4px solid #C8A64E',
-          backgroundImage: 'url("/horeca_dining_plates.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'left center',
-          boxShadow: '-15px 0 40px rgba(0,0,0,0.06)'
-        }}></div>
-      </div>
-
-      <Container className="position-relative z-10" style={{ maxWidth: '1400px' }}>
-        <Row className="align-items-center justify-content-between">
+      {/* Cream Section */}
+      <div className="position-relative z-10 d-flex flex-column" style={{ backgroundColor: '#FAF8F3', flexGrow: 1, padding: '100px 0' }}>
+        <Container className="container-luxury" style={{ maxWidth: '1250px' }}>
           
-          {/* Left Column - Text Content */}
-          <Col lg={5} xl={4} className="mb-5 mb-lg-0 pe-lg-4">
-            <span className="inter text-uppercase fw-bold d-block mb-3" style={{ fontSize: '0.85rem', color: '#C8A64E', letterSpacing: '1.5px' }}>
+          {/* Header Area */}
+          <div className="text-center mb-5">
+            <h6 className="inter fw-bold tracking-widest mb-3 uppercase" style={{ color: '#A27C37', fontSize: '0.85rem', letterSpacing: '2px' }}>
               HORECA DIVISION
-            </span>
+            </h6>
             
-            <h2 className="cormorant mb-4" style={{ fontSize: '3.2rem', lineHeight: '1.15', color: '#1a1a1a', fontWeight: '600' }}>
-              Trusted Supply Partner for<br/>
-              <span style={{ color: '#C8A64E' }}>Hospitality & Foodservice</span>
+            <h2 className="cormorant fw-bold mb-4 lh-sm" style={{ fontSize: '3.5rem', color: '#1A1A1A' }}>
+              Trusted Supply Partner for<br />
+              <span style={{ color: '#A27C37' }}>Hospitality and Foodservice</span>
             </h2>
             
-            <div style={{ width: '40px', height: '2px', backgroundColor: '#C8A64E', marginBottom: '2.5rem' }}></div>
-            
-            <p className="inter mb-5" style={{ fontSize: '1rem', lineHeight: '1.8', color: '#555555' }}>
-              Through brands Goods LLC, Sahmora’s ecosystem supplies hotels, restaurants, cafés, catering companies, and institutional buyers across the UAE.
+            <p className="inter mx-auto" style={{ color: '#4A4A4A', fontSize: '1rem', lineHeight: '1.7', maxWidth: '650px' }}>
+              Through Igrade Goods LLC, Sahmora's ecosystem supplies hotels, restaurants, cafés, catering companies, and institutional buyers across the UAE.
             </p>
+          </div>
 
-            {/* Quote Box */}
-            <div className="position-relative rounded-3" style={{ border: '1px solid rgba(200, 166, 78, 0.4)', padding: '2rem 1.5rem 1.5rem', marginTop: '2rem' }}>
-              <div className="position-absolute d-flex align-items-center justify-content-center" style={{ 
-                top: '-25px', left: '20px', 
-                backgroundColor: '#FCFBF8', 
-                padding: '0 10px', 
-                color: '#C8A64E', 
-                fontSize: '4rem',
-                fontFamily: 'serif',
-                lineHeight: '1'
-              }}>
-                “
-              </div>
-              <p className="inter mb-0 fw-medium" style={{ fontSize: '0.95rem', lineHeight: '1.8', color: '#333333' }}>
-                The HORECA division reflects Sahmora’s ability to serve demanding business customers with reliability, product depth, and operational discipline.”
+          {/* Horeca Strengths Divider */}
+          <div className="d-flex align-items-center justify-content-center mb-5 mt-5">
+            <div className="flex-grow-1" style={{ height: '1px', background: 'rgba(162, 124, 55, 0.4)', maxWidth: '400px' }}></div>
+            <h6 className="inter uppercase px-4 mb-0 fw-bold text-center tracking-widest" style={{ color: '#1A1A1A', fontSize: '0.9rem', letterSpacing: '2px' }}>
+              HORECA STRENGTHS
+            </h6>
+            <div className="flex-grow-1" style={{ height: '1px', background: 'rgba(162, 124, 55, 0.4)', maxWidth: '400px' }}></div>
+          </div>
+
+          {/* Strengths Row */}
+          <div className="d-flex flex-wrap justify-content-center align-items-start position-relative mb-5 pb-4">
+            {strengths.map((item, idx) => (
+              <React.Fragment key={idx}>
+                <div className="text-center px-2 px-md-4" style={{ width: '150px' }}>
+                  {/* Icon Circle */}
+                  <div className="mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center position-relative" 
+                       style={{ 
+                         width: '75px', height: '75px', 
+                         backgroundColor: '#FAF8F3',
+                         border: '1px solid rgba(162, 124, 55, 0.4)',
+                         boxShadow: '0 0 25px rgba(162, 124, 55, 0.15), inset 0 0 15px rgba(255,255,255,1)'
+                       }}>
+                    <div style={{ color: '#A27C37' }}>
+                      {item.icon}
+                    </div>
+                  </div>
+                  
+                  {/* Text */}
+                  <p className="inter fw-medium" style={{ color: '#1A1A1A', fontSize: '0.85rem', lineHeight: '1.4', whiteSpace: 'pre-line' }}>
+                    {item.title}
+                  </p>
+                </div>
+
+                {/* Vertical separator (except after last item) */}
+                {idx < strengths.length - 1 && (
+                  <div className="d-none d-lg-block mt-4" style={{ 
+                    width: '1px', 
+                    height: '35px', 
+                    borderLeft: '2px dotted rgba(162, 124, 55, 0.5)' 
+                  }}></div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* Positioning Statement Box */}
+          <div className="mx-auto p-4 rounded-3 d-flex flex-column flex-md-row align-items-center align-items-md-start" 
+               style={{ 
+                 maxWidth: '850px', 
+                 backgroundColor: '#F8F5EE', 
+                 border: '1px solid rgba(162, 124, 55, 0.3)',
+                 boxShadow: '0 10px 30px rgba(0,0,0,0.02)'
+               }}>
+            
+            {/* Custom Shield & Laurel Icon */}
+            <div className="me-md-5 mb-4 mb-md-0 position-relative flex-shrink-0 d-flex align-items-center justify-content-center mt-2" style={{ width: '70px', height: '70px' }}>
+              {/* Fake laurel wreaths using border radius and rotation */}
+              <div className="position-absolute w-100 h-100 rounded-circle" style={{ border: '2px dashed #A27C37', opacity: 0.6 }}></div>
+              <FaShieldAlt size={45} color="#111" className="position-relative z-10" />
+              <FaStar size={16} color="#A27C37" className="position-absolute top-50 start-50 translate-middle z-10" style={{ marginTop: '-2px' }} />
+            </div>
+
+            <div className="text-center text-md-start">
+              <h6 className="inter fw-bold tracking-widest mb-2 uppercase" style={{ color: '#A27C37', fontSize: '0.85rem', letterSpacing: '1.5px' }}>
+                POSITIONING STATEMENT
+              </h6>
+              <p className="inter mb-0 fw-medium" style={{ color: '#1A1A1A', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                The HORECA division reflects Sahmora's ability to serve demanding business customers with reliability, product depth, and operational discipline.
               </p>
             </div>
-          </Col>
+          </div>
 
-          {/* Right Column - Cards Grid */}
-          <Col lg={6} xl={7} className="pe-xl-5">
-            <Row className="g-4 g-xl-5">
-              {strengths.map((item, idx) => (
-                <Col sm={6} key={idx}>
-                  <motion.div 
-                    whileHover={{ y: -5 }}
-                    className="horeca-item bg-white rounded-4 text-center d-flex flex-column align-items-center justify-content-center"
-                    style={{ 
-                      boxShadow: '0 8px 30px rgba(0,0,0,0.04)',
-                      padding: '2rem 1.5rem',
-                      height: '100%',
-                      margin: '0 auto',
-                      maxWidth: '280px'
-                    }}
-                  >
-                    {/* Icon Container */}
-                    <div className="d-flex align-items-center justify-content-center rounded-circle mb-3" 
-                         style={{ 
-                           width: '50px', height: '50px', 
-                           border: '1px solid #C8A64E',
-                           backgroundColor: '#FCFBF8'
-                         }}>
-                      <div style={{ color: '#C8A64E', fontSize: '1.2rem' }}>
-                        {item.icon}
-                      </div>
-                    </div>
-                    
-                    <h5 className="cormorant fw-bold mb-3" style={{ fontSize: '1.2rem', color: '#1a1a1a', whiteSpace: 'pre-line', lineHeight: '1.3' }}>
-                      {item.title}
-                    </h5>
-                    
-                    <div style={{ width: '15px', height: '2px', backgroundColor: '#C8A64E' }}></div>
-                  </motion.div>
-                </Col>
-              ))}
-            </Row>
-          </Col>
+        </Container>
+      </div>
 
-        </Row>
-      </Container>
     </section>
   );
 };

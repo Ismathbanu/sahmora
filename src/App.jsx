@@ -10,13 +10,12 @@ import WhyUAE from './components/sections/WhyUAE';
 import GoldInvestment from './components/sections/GoldInvestment';
 import UAEExpansion from './components/sections/UAEExpansion';
 import SahmoraEcosystem from './components/sections/SahmoraEcosystem';
-import BusinessStrength from './components/sections/BusinessStrength';
-import GrowthEngine from './components/sections/GrowthEngine';
 import Vision2050 from './components/sections/Vision2050';
 import WhyPartner from './components/sections/WhyPartner';
 import Contact from './components/sections/Contact';
 import SahmoraPartner from './components/sections/SahmoraPartner';
 import HorecaDivision from './components/sections/HorecaDivision';
+import BrandPortfolio from './components/sections/BrandPortfolio';
 import InvestmentStrategy from './components/sections/InvestmentStrategy';
 
 function App() {
@@ -57,9 +56,8 @@ function App() {
         <UAEExpansion />
         <SahmoraPartner />
         <SahmoraEcosystem />
-        <BusinessStrength />
-        <GrowthEngine />
         <HorecaDivision />
+        <BrandPortfolio />
         <Vision2050 />
         <InvestmentStrategy />
         <WhyPartner />
@@ -70,4 +68,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

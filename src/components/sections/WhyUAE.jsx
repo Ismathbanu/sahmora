@@ -1,67 +1,144 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from 'framer-motion';
-import { FaGlobe, FaShieldAlt, FaChartPie, FaMoneyBillWave, FaLandmark, FaUsers } from 'react-icons/fa';
-
-gsap.registerPlugin(ScrollTrigger);
+import { HiOutlineUsers, HiOutlineOfficeBuilding, HiOutlineGlobe } from 'react-icons/hi';
+import { IoDiamondOutline } from 'react-icons/io5';
+import { BiCrown } from 'react-icons/bi';
+import { BsCircle } from 'react-icons/bs';
 
 const WhyUAE = () => {
-  const sectionRef = useRef(null);
-
-  const stats = [
-    { icon: <FaGlobe />, title: 'Global Hub', val: '#1', desc: 'Gold trading center' },
-    { icon: <FaShieldAlt />, title: 'Security', val: '0%', desc: 'Income tax rate' },
-    { icon: <FaChartPie />, title: 'Growth', val: '6.5%', desc: 'Expected retail CAGR' },
-    { icon: <FaMoneyBillWave />, title: 'Liquidity', val: 'High', desc: 'Market volume' },
-    { icon: <FaLandmark />, title: 'Regulation', val: 'Strict', desc: 'Investor protection' },
-    { icon: <FaUsers />, title: 'Tourism', val: '20M+', desc: 'Annual visitors' },
+  const advantages = [
+    { 
+      icon: <HiOutlineUsers size={46} strokeWidth={1} />, 
+      text: "Strong Indian and South Asian customer base" 
+    },
+    { 
+      icon: <IoDiamondOutline size={42} strokeWidth={15} />, 
+      text: "High gold and jewellery purchasing culture" 
+    },
+    { 
+      icon: <HiOutlineOfficeBuilding size={46} strokeWidth={1} />, 
+      text: "Premium retail and mall infrastructure" 
+    },
+    { 
+      icon: <BiCrown size={46} strokeWidth={0.5} />, 
+      text: "GCC luxury consumer access" 
+    },
+    { 
+      icon: (
+        <div className="position-relative d-inline-flex flex-column align-items-center justify-content-end" style={{ height: '46px' }}>
+          <IoDiamondOutline size={18} strokeWidth={25} style={{ marginBottom: '-8px', zIndex: 1, backgroundColor: '#06080A', padding: '0 2px' }} />
+          <BsCircle size={30} strokeWidth={1} />
+        </div>
+      ), 
+      text: "Wedding, gifting, and family jewellery demand" 
+    },
+    { 
+      icon: <HiOutlineGlobe size={46} strokeWidth={1} />, 
+      text: "Gateway for future GCC expansion" 
+    }
   ];
 
   return (
-    <section className="bg-premium-white section-padding" ref={sectionRef}>
-      <Container className="container-luxury">
+    <section 
+      id="why-uae" 
+      className="section-padding position-relative" 
+      style={{ 
+        backgroundColor: '#06080A', 
+        backgroundImage: 'linear-gradient(rgba(6, 8, 10, 0.75), rgba(6, 8, 10, 0.9)), url(/dubai-skyline-bg.png)', 
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'no-repeat', 
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center'
+      }}
+    >
+      <Container className="container-luxury position-relative z-10" style={{ maxWidth: '1350px' }}>
         <Row className="align-items-center">
-          <Col lg={6} className="pe-lg-5 mb-5 mb-lg-0 order-2 order-lg-1">
-            <div className="d-flex align-items-center mb-3">
-              <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent-luxury-gold)', marginRight: '15px' }}></div>
-              <span className="inter text-gold text-uppercase tracking-widest fw-bold" style={{ fontSize: '0.85rem' }}>WHY UAE?</span>
-            </div>
-            
-            <h2 className="cormorant display-4 text-matte-black fw-bold mb-4" style={{ lineHeight: '1.2' }}>
-              The Perfect Launchpad<br/>for Premium Growth
+          
+          {/* Left Column (Text) */}
+          <Col lg={5} className="pe-lg-5 mb-5 mb-lg-0 text-start">
+            <h2 className="cormorant fw-bold mb-3" style={{ fontSize: '4.2rem', color: '#D4B46A', lineHeight: '1.1' }}>
+              Why the UAE Market
             </h2>
             
-            <p className="inter text-muted mb-5" style={{ fontSize: '1rem', lineHeight: '1.8', maxWidth: '95%' }}>
-              The United Arab Emirates is the undisputed capital of luxury retail and gold trade. With unrivalled infrastructure, zero tax on personal income, and a booming tourism sector, it is the perfect launchpad for Sahmora's premium portfolio.
+            <h5 className="inter fw-bold mb-4" style={{ color: '#D4B46A', fontSize: '1.15rem', letterSpacing: '0.5px' }}>
+              The Right Market. The Right Timing. The Right Brand.
+            </h5>
+            
+            <p className="inter mb-4" style={{ color: '#E0E0E0', fontSize: '1.05rem', lineHeight: '1.7', opacity: 0.9 }}>
+              The UAE is one of the world's most respected gold and jewellery destinations, supported by strong expatriate demand, luxury retail infrastructure, international tourism, and deep consumer trust in gold as a store of value.
             </p>
             
-            <Row className="g-0 mt-4">
-              {stats.map((stat, idx) => (
-                <Col md={4} sm={6} key={idx} className={`p-4 text-center ${idx < 3 ? 'border-bottom' : ''} ${idx % 3 !== 2 ? 'border-end' : ''}`} style={{ borderColor: 'rgba(0,0,0,0.08) !important' }}>
-                  <motion.div whileHover={{ y: -5 }}>
-                    <div className="text-gold fs-3 mb-2 opacity-75">{stat.icon}</div>
-                    <h3 className="inter text-matte-black fw-bold mb-0" style={{ fontSize: '1.2rem' }}>{stat.val}</h3>
-                    <h6 className="inter text-dark fw-bold mb-1" style={{ fontSize: '0.85rem' }}>{stat.title}</h6>
-                    <p className="inter text-muted mb-0" style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>{stat.desc}</p>
-                  </motion.div>
-                </Col>
-              ))}
-            </Row>
+            <p className="inter mb-0" style={{ color: '#E0E0E0', fontSize: '1.05rem', lineHeight: '1.7', opacity: 0.9 }}>
+              Talbar's UAE expansion is positioned around a powerful market opportunity: combining Indian jewellery heritage with the UAE's global luxury environment.
+            </p>
           </Col>
-          <Col lg={6} className="order-1 order-lg-2 position-relative mb-5 mb-lg-0 text-center">
-            {/* Beautiful Graphic Image on the Right */}
-            <motion.img 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              src="/why-uae-graphic.png" 
-              alt="UAE Premium Growth" 
-              className="img-fluid w-100"
-              style={{ maxHeight: '600px', objectFit: 'contain' }}
-            />
+
+          {/* Right Column (Grid) */}
+          <Col lg={7} className="ps-lg-5">
+            {/* Divider Header */}
+            <div className="d-flex align-items-center justify-content-center mb-4">
+              <div style={{ flex: '1', height: '1px', backgroundColor: 'rgba(212, 180, 106, 0.25)' }}></div>
+              <h6 className="inter text-uppercase tracking-widest px-4 mb-0 fw-bold" style={{ color: '#D4B46A', fontSize: '0.9rem', letterSpacing: '3px' }}>
+                MARKET ADVANTAGES
+              </h6>
+              <div style={{ flex: '1', height: '1px', backgroundColor: 'rgba(212, 180, 106, 0.25)' }}></div>
+            </div>
+
+            {/* Grid Box */}
+            <div 
+              style={{ 
+                border: '1px solid rgba(212, 180, 106, 0.25)', 
+                borderRadius: '8px', 
+                backgroundColor: 'rgba(6, 8, 10, 0.5)', 
+                backdropFilter: 'blur(5px)' 
+              }}
+            >
+              <Row className="g-0 text-center">
+                {advantages.map((item, idx) => {
+                  const isBottom = idx >= 3;
+                  const isRightEdge = idx % 3 === 2;
+                  
+                  return (
+                    <Col 
+                      xs={12} md={4} 
+                      key={idx} 
+                      className="p-4 d-flex flex-column align-items-center justify-content-center grid-cell"
+                      style={{ 
+                        borderBottom: !isBottom ? '1px solid rgba(212, 180, 106, 0.25)' : 'none', 
+                        borderRight: !isRightEdge ? '1px solid rgba(212, 180, 106, 0.25)' : 'none',
+                        minHeight: '240px'
+                      }}
+                    >
+                      <div className="mb-4" style={{ color: '#D4B46A' }}>
+                        {item.icon}
+                      </div>
+                      <p className="inter mb-0" style={{ color: '#E0E0E0', fontSize: '1rem', lineHeight: '1.5', maxWidth: '85%' }}>
+                        {item.text}
+                      </p>
+                    </Col>
+                  );
+                })}
+              </Row>
+            </div>
+            
+            {/* Custom CSS for mobile borders */}
+            <style dangerouslySetInnerHTML={{__html: `
+              @media (max-width: 767px) {
+                #why-uae .grid-cell {
+                  border-right: none !important;
+                  border-bottom: 1px solid rgba(212, 180, 106, 0.25) !important;
+                  min-height: 200px !important;
+                }
+                #why-uae .grid-cell:last-child {
+                  border-bottom: none !important;
+                }
+              }
+            `}} />
           </Col>
+          
         </Row>
       </Container>
     </section>

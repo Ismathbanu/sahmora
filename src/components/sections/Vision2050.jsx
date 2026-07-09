@@ -1,200 +1,145 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from 'framer-motion';
-import { FaStore, FaChartLine, FaGlobe } from 'react-icons/fa';
+import { FaStore, FaChartLine, FaFlag, FaHandshake, FaGlobe, FaGem, FaStar, FaCrown } from 'react-icons/fa';
 import { AiOutlineGold } from 'react-icons/ai';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Vision2050 = () => {
-  const sectionRef = useRef(null);
-  
-  useEffect(() => {
-    const elements = sectionRef.current.querySelectorAll('.animate-up');
-    
-    gsap.fromTo(elements,
-      { y: 30, opacity: 0 },
-      {
-        y: 0, opacity: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        }
-      }
-    );
-  }, []);
-
   const timeline = [
-    { year: '2024', text: 'Foundation\n& Growth' },
-    { year: '2030', text: 'Market Leadership\nin UAE' },
-    { year: '2040', text: 'Regional Expansion\nAcross GCC' },
-    { year: '2050', text: 'Global Luxury\nInvestment Leader' }
+    { year: '2024', title: 'Strengthening\nthe Foundation', icon: <FaFlag /> },
+    { year: '2027', title: 'Expanding\nOur Presence', icon: <FaStore /> },
+    { year: '2030', title: 'Building Trust\n& Loyalty', icon: <FaHandshake /> },
+    { year: '2035', title: 'Growing Across\nthe Region', icon: <FaGlobe /> },
+    { year: '2040', title: 'Becoming a Global\nJewellery Brand', icon: <FaGem /> },
+    { year: '2045', title: 'Strengthening\nOur Legacy', icon: <FaStar /> },
+    { year: '2050', title: 'Achieving AED 3.75 Billion\nRevenue Vision', icon: <FaCrown /> }
   ];
 
   return (
-    <section id="vision" className="position-relative" style={{ backgroundColor: '#ffffff', color: '#111', padding: '6rem 0' }} ref={sectionRef}>
-      
-      <Container className="container-luxury position-relative">
+    <section id="vision" className="section-padding" style={{ backgroundColor: '#ffffff', color: '#111', padding: '6rem 0' }}>
+      <Container className="container-luxury" style={{ maxWidth: '1400px' }}>
         
-        {/* Header Section */}
-        <div className="text-center mb-5 pb-2 animate-up">
-          <span className="inter text-uppercase fw-bold d-block mb-3" style={{ fontSize: '0.8rem', letterSpacing: '2px', color: 'var(--accent-luxury-gold)' }}>
-            THE LONG-TERM HORIZON
-          </span>
-          <h2 className="cormorant mb-3" style={{ fontSize: '4.5rem', color: '#1a1a1a', fontWeight: '500' }}>
-            Vision <span style={{ color: 'var(--accent-luxury-gold)' }}>2050</span>
-          </h2>
-          <p className="inter mx-auto text-dark" style={{ fontSize: '0.95rem', maxWidth: '650px', lineHeight: '1.8' }}>
-            By 2050, Sahmora Investment LLC aims to be the preeminent luxury and gold investment conglomerate in the Middle East, setting global standards for quality, transparency, and shareholder value.
-          </p>
-        </div>
-
-        {/* Middle Infographic Section */}
-        <div className="position-relative d-flex flex-column align-items-center mb-5 pb-4">
+        {/* Top Section */}
+        <Row className="align-items-center mb-5 pb-5 border-bottom justify-content-between" style={{ borderColor: 'rgba(200,166,78,0.2) !important' }}>
           
-          {/* Horizontal Dotted Line connecting the blocks */}
-          <div className="position-absolute w-100 d-none d-lg-block" style={{ 
-            top: '160px', 
-            borderTop: '1px dashed rgba(200, 166, 78, 0.6)', 
-            zIndex: 0,
-            maxWidth: '900px'
-          }}></div>
-
-          <Row className="w-100 justify-content-center align-items-center position-relative z-10" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          {/* Left Column */}
+          <Col lg={6} className="pe-lg-5 mb-5 mb-lg-0">
+            {/* Kicker */}
+            <div className="d-flex align-items-center mb-4">
+              <div className="me-2" style={{ width: '30px', height: '30px', backgroundColor: '#C8A64E', maskImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 24 24\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9Z\'/%3E%3C/svg%3E")', WebkitMaskImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 24 24\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9Z\'/%3E%3C/svg%3E")' }}></div>
+              <span className="inter fw-bold tracking-widest uppercase" style={{ color: '#C8A64E', fontSize: '0.85rem', letterSpacing: '3px' }}>
+                VISION 2050 LEGACY
+              </span>
+            </div>
             
-            {/* Left Card: Boutiques */}
-            <Col lg={4} md={6} className="mb-4 mb-lg-0 px-lg-4 animate-up d-flex justify-content-end">
-              <div className="bg-white text-center d-flex flex-column align-items-center position-relative"
-                style={{ 
-                  border: '1px solid rgba(200,166,78,0.4)', 
-                  borderRadius: '24px',
-                  boxShadow: '0 10px 40px rgba(0,0,0,0.02)',
-                  width: '260px',
-                  padding: '2.5rem 1.5rem',
-                  zIndex: 2
-                }}
-              >
-                <div className="rounded-circle d-flex align-items-center justify-content-center mb-4" style={{ width: '64px', height: '64px', backgroundColor: '#111' }}>
-                  <FaStore style={{ color: 'var(--accent-luxury-gold)', fontSize: '1.5rem' }} />
-                </div>
-                <h3 className="cormorant fw-medium mb-1" style={{ fontSize: '3.2rem', color: 'var(--accent-luxury-gold)', lineHeight: '1' }}>75</h3>
-                <div style={{ width: '30px', height: '1px', backgroundColor: 'var(--accent-luxury-gold)', margin: '15px auto' }}></div>
-                <p className="inter fw-bold mb-0 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '1.5px', color: '#111' }}>BOUTIQUES</p>
-              </div>
-            </Col>
+            <h2 className="cormorant fw-bold mb-2 lh-sm" style={{ fontSize: '4.5rem', color: '#2C3034' }}>
+              The Journey to<br/>
+              <span style={{ color: '#C8A64E' }}>AED 3.75 Billion</span>
+            </h2>
+            
+            <div className="my-4" style={{ width: '100%', height: '1px', backgroundColor: 'rgba(200, 166, 78, 0.4)' }}></div>
+            
+            <p className="cormorant fst-italic mb-5" style={{ fontSize: '1.8rem', color: '#4A4A4A' }}>
+              From one boutique to a global jewellery legacy.
+            </p>
 
-            {/* Center Circle: Valuation */}
-            <Col lg={4} md={12} className="mb-4 mb-lg-0 animate-up text-center d-flex justify-content-center z-10 position-relative">
+            {/* Stats Row */}
+            <div className="d-flex flex-wrap justify-content-between">
               
-              {/* Outer Glow Ring */}
-              <div className="rounded-circle position-relative d-flex flex-column align-items-center justify-content-center bg-white"
-                style={{ 
-                  width: '320px', 
-                  height: '320px', 
-                  boxShadow: '0 0 0 2px rgba(200, 166, 78, 0.5), 0 20px 40px rgba(200, 166, 78, 0.1)',
-                  zIndex: 2
-                }}
-              >
-                {/* Inner Crisp Gold Ring */}
-                <div className="position-absolute rounded-circle" style={{ 
-                  width: '92%', height: '92%', 
-                  border: '1px solid rgba(200, 166, 78, 0.3)'
-                }}></div>
-
-                {/* Overlapping Top Icon */}
-                <div className="position-absolute start-50 translate-middle rounded-circle bg-white d-flex align-items-center justify-content-center" style={{ 
-                  top: '0',
-                  width: '64px', 
-                  height: '64px', 
-                  border: '2px solid rgba(200, 166, 78, 0.8)',
-                  zIndex: 3
-                }}>
-                  <FaChartLine style={{ color: 'var(--accent-luxury-gold)', fontSize: '1.4rem' }} />
+              <div className="d-flex align-items-center mb-3">
+                <div className="d-flex justify-content-center me-3" style={{ color: '#C8A64E', fontSize: '2.5rem' }}>
+                  <FaStore />
                 </div>
-
-                <div className="position-relative z-10 mt-3 d-flex flex-column align-items-center">
-                  <span className="cormorant fw-bold mb-0" style={{ fontSize: '1.3rem', letterSpacing: '2px', color: '#111' }}>AED</span>
-                  <span className="cormorant mb-3" style={{ fontSize: '5rem', lineHeight: '0.9', color: 'var(--accent-luxury-gold)', fontWeight: '500' }}>3.75B</span>
-                  <span className="inter fw-bold d-block text-uppercase" style={{ fontSize: '0.85rem', letterSpacing: '1px', color: '#111' }}>PROJECTED</span>
-                  <span className="inter fw-bold d-block text-uppercase" style={{ fontSize: '0.85rem', letterSpacing: '1px', color: '#111' }}>VALUATION</span>
+                <div>
+                  <div className="cormorant fw-bold" style={{ color: '#C8A64E', fontSize: '2.2rem', lineHeight: '1' }}>75</div>
+                  <div className="inter text-dark" style={{ fontSize: '0.9rem', lineHeight: '1.2' }}>Luxury<br/>Boutiques</div>
                 </div>
               </div>
-            </Col>
 
-            {/* Right Card: Gold */}
-            <Col lg={4} md={6} className="px-lg-4 animate-up d-flex justify-content-start z-10">
-              <div className="bg-white text-center d-flex flex-column align-items-center position-relative"
-                style={{ 
-                  border: '1px solid rgba(200,166,78,0.4)', 
-                  borderRadius: '24px',
-                  boxShadow: '0 10px 40px rgba(0,0,0,0.02)',
-                  width: '260px',
-                  padding: '2.5rem 1.5rem',
-                  zIndex: 2
-                }}
-              >
-                <div className="rounded-circle d-flex align-items-center justify-content-center mb-4" style={{ width: '64px', height: '64px', backgroundColor: '#111' }}>
-                  <AiOutlineGold style={{ color: 'var(--accent-luxury-gold)', fontSize: '1.8rem' }} />
+              <div className="d-none d-md-block" style={{ width: '1px', backgroundColor: 'rgba(200, 166, 78, 0.3)' }}></div>
+
+              <div className="d-flex align-items-center mb-3">
+                <div className="d-flex justify-content-center me-3" style={{ color: '#C8A64E', fontSize: '2.5rem' }}>
+                  <AiOutlineGold />
                 </div>
-                <h3 className="cormorant fw-medium mb-1" style={{ fontSize: '3rem', color: 'var(--accent-luxury-gold)', lineHeight: '1.1' }}>7,500 Kg</h3>
-                <div style={{ width: '30px', height: '1px', backgroundColor: 'var(--accent-luxury-gold)', margin: '15px auto' }}></div>
-                <p className="inter fw-bold mb-0 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '1.5px', color: '#111' }}>GOLD ANNUALLY</p>
+                <div>
+                  <div className="cormorant fw-bold" style={{ color: '#C8A64E', fontSize: '2.2rem', lineHeight: '1' }}>7,500</div>
+                  <div className="inter text-dark" style={{ fontSize: '0.9rem', lineHeight: '1.2' }}>Kg Gold<br/>Sold Annually</div>
+                </div>
               </div>
-            </Col>
-            
-          </Row>
-          
-          {/* Global Presence Pill */}
-          <div className="mt-4 pt-2 animate-up position-relative" style={{ zIndex: 10 }}>
-            <div className="bg-white rounded-pill d-flex align-items-center shadow-sm"
-              style={{ border: '1px solid rgba(200,166,78,0.4)', padding: '6px 20px 6px 6px', maxWidth: '400px' }}
-            >
-              <div className="rounded-circle d-flex align-items-center justify-content-center me-3" style={{ width: '45px', height: '45px', backgroundColor: '#111' }}>
-                <FaGlobe style={{ color: 'var(--accent-luxury-gold)', fontSize: '1.2rem' }} />
+
+              <div className="d-none d-md-block" style={{ width: '1px', backgroundColor: 'rgba(200, 166, 78, 0.3)' }}></div>
+
+              <div className="d-flex align-items-center mb-3">
+                <div className="d-flex justify-content-center me-3" style={{ color: '#C8A64E', fontSize: '2.5rem' }}>
+                  <FaChartLine />
+                </div>
+                <div>
+                  <div className="cormorant fw-bold" style={{ color: '#C8A64E', fontSize: '1.5rem', lineHeight: '1' }}>AED 3.75</div>
+                  <div className="inter text-dark" style={{ fontSize: '0.9rem', lineHeight: '1.2' }}>Billion<br/>Revenue Vision</div>
+                </div>
               </div>
-              <div className="text-start">
-                <p className="inter fw-bold mb-0 text-uppercase" style={{ fontSize: '0.8rem', letterSpacing: '1px', color: '#111' }}>GLOBAL PRESENCE</p>
-                <p className="inter mb-0" style={{ fontSize: '0.75rem', color: '#666' }}>Expanding across key markets worldwide</p>
+
+            </div>
+          </Col>
+
+          {/* Right Column: Seal Image */}
+          <Col lg={5} className="d-flex justify-content-end position-relative">
+            <div className="position-relative" style={{ width: '450px', height: '450px' }}>
+              <img src="/vision-seal.png" alt="Vision Seal" className="w-100 h-100" style={{ objectFit: 'contain' }} />
+              
+              {/* Overlay Text inside the seal */}
+              <div className="position-absolute top-50 start-50 translate-middle text-center w-100" style={{ marginTop: '10px' }}>
+                <div className="cormorant fw-bold" style={{ color: '#2C3034', fontSize: '1.5rem', letterSpacing: '1px' }}>AED</div>
+                <div className="cormorant fw-bold my-1" style={{ color: '#2C3034', fontSize: '4.8rem', lineHeight: '0.8', transform: 'scale(1.1)' }}>3.75</div>
+                <div className="inter fw-bold mt-3 mb-1 uppercase" style={{ color: '#2C3034', fontSize: '1.2rem', letterSpacing: '2px' }}>BILLION</div>
+                <div className="inter fw-medium uppercase" style={{ color: '#A27C37', fontSize: '0.85rem', letterSpacing: '1.5px' }}>REVENUE VISION</div>
+                <div className="d-flex align-items-center justify-content-center mt-2">
+                  <div style={{ width: '15px', height: '1px', backgroundColor: '#A27C37' }}></div>
+                  <div className="mx-1" style={{ width: '4px', height: '4px', backgroundColor: '#A27C37', transform: 'rotate(45deg)' }}></div>
+                  <div style={{ width: '15px', height: '1px', backgroundColor: '#A27C37' }}></div>
+                </div>
               </div>
             </div>
+          </Col>
+
+        </Row>
+
+        {/* Timeline Section */}
+        <div className="pt-4">
+
+          {/* Timeline Content */}
+          <div className="d-flex flex-column flex-md-row justify-content-between mt-md-4 px-3 px-md-0">
+            {timeline.map((item, idx) => (
+              <div key={idx} className="text-center d-flex flex-column align-items-center mb-4 mb-md-0" style={{ flex: '1 1 0', padding: '0 5px' }}>
+                
+                {/* Icon in Circle */}
+                <div className="rounded-circle d-flex align-items-center justify-content-center mb-3" style={{ width: '50px', height: '50px', backgroundColor: '#FDFBF7', border: '1px solid rgba(200, 166, 78, 0.3)' }}>
+                  <div style={{ color: '#C8A64E', fontSize: '1.2rem' }}>
+                    {item.icon}
+                  </div>
+                </div>
+                
+                <h4 className="cormorant fw-bold mb-1" style={{ color: '#C8A64E', fontSize: '1.6rem' }}>{item.year}</h4>
+                <p className="inter text-dark" style={{ fontSize: '0.8rem', lineHeight: '1.4', whiteSpace: 'pre-line' }}>{item.title}</p>
+                
+              </div>
+            ))}
           </div>
 
         </div>
 
-        {/* Timeline Bottom */}
-        <div className="position-relative mt-5 pt-3 animate-up mx-auto" style={{ maxWidth: '1000px' }}>
+        {/* Bottom Legacy Kicker */}
+        <div className="d-flex align-items-center justify-content-center mt-5 pt-4">
+          <div className="d-none d-md-block border rounded-pill" style={{ width: '40px', height: '20px', borderTopColor: 'transparent !important', borderBottomColor: '#C8A64E !important', borderLeftColor: 'transparent !important', borderRightColor: 'transparent !important', transform: 'rotate(180deg)' }}></div>
+          <div className="d-none d-md-block" style={{ width: '60px', height: '1px', backgroundColor: 'rgba(200, 166, 78, 0.5)', marginRight: '20px' }}></div>
           
-          {/* Main line with arrow at end */}
-          <div className="position-absolute start-0 w-100 d-flex align-items-center" style={{ top: '16px' }}>
-            <div className="flex-grow-1" style={{ height: '2px', backgroundColor: 'var(--accent-luxury-gold)' }}></div>
-            {/* Arrowhead */}
-            <div style={{ 
-              width: '12px', height: '12px', 
-              borderTop: '2px solid var(--accent-luxury-gold)', 
-              borderRight: '2px solid var(--accent-luxury-gold)', 
-              transform: 'rotate(45deg)',
-              marginLeft: '-4px'
-            }}></div>
-          </div>
-
-          <Row className="position-relative z-10 justify-content-between text-center mx-0">
-            {timeline.map((item, idx) => (
-              <Col key={idx} xs={3} className="d-flex flex-column align-items-center">
-                {/* Node */}
-                <div className="rounded-circle mb-3" style={{ width: '14px', height: '14px', backgroundColor: 'var(--accent-luxury-gold)' }}></div>
-                
-                {/* Text */}
-                <h4 className="cormorant fw-medium mb-1" style={{ fontSize: '1.4rem', color: 'var(--accent-luxury-gold)' }}>{item.year}</h4>
-                <p className="inter fw-medium" style={{ fontSize: '0.85rem', color: '#111', whiteSpace: 'pre-line', lineHeight: '1.4' }}>{item.text}</p>
-              </Col>
-            ))}
-          </Row>
+          <h5 className="cormorant fw-bold text-center mb-0 uppercase" style={{ color: '#111', fontSize: '1.4rem', letterSpacing: '2px', lineHeight: '1.4' }}>
+            <span style={{ color: '#C8A64E' }}>TALBAR</span> — BUILDING A LEGACY<br/>
+            OF GOLD, TRUST & PROSPERITY.
+          </h5>
           
+          <div className="d-none d-md-block" style={{ width: '60px', height: '1px', backgroundColor: 'rgba(200, 166, 78, 0.5)', marginLeft: '20px' }}></div>
+          <div className="d-none d-md-block border rounded-pill" style={{ width: '40px', height: '20px', borderTopColor: '#C8A64E !important', borderBottomColor: 'transparent !important', borderLeftColor: 'transparent !important', borderRightColor: 'transparent !important' }}></div>
         </div>
 
       </Container>

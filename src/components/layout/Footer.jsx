@@ -28,10 +28,11 @@ const Footer = () => {
           <Col lg={3} md={6}>
             <h5 className="cormorant text-gold mb-4">Contact</h5>
             <ul className="list-unstyled inter text-white-50" style={{ fontSize: '0.9rem', lineHeight: '1.8' }}>
-              <li className="mb-2">Dubai Design District</li>
+              <li className="mb-2">DIRC Complex, W5-E.5</li>
+              <li className="mb-2">Dubai Investment Park 2</li>
               <li className="mb-2">Dubai, United Arab Emirates</li>
-              <li className="mb-2">info@sahmora.com</li>
-              <li className="mb-2">+971 4 123 4567</li>
+              <li className="mb-2 mt-3">+971 4 276 6331</li>
+              <li className="mb-2">+971 4 880 5504</li>
             </ul>
           </Col>
           <Col lg={3} md={6}>

@@ -1,168 +1,111 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { motion } from 'framer-motion';
-import { FaGlobe, FaChartLine, FaHandshake, FaBullseye, FaShoppingBag, FaShieldAlt, FaCrown } from 'react-icons/fa';
+import { FaRegGem, FaHandshake, FaCubes, FaCog } from 'react-icons/fa';
+import { HiOutlineGlobeAlt, HiOutlineShoppingBag, HiOutlineTrendingUp, HiOutlineUserGroup } from 'react-icons/hi';
 
 const WhyPartner = () => {
-  const features = [
-    { title: 'Market Access', desc: 'Direct entry into the lucrative GCC luxury\nretail and gold markets.', icon: <FaGlobe />, num: '01' },
-    { title: 'Growth Capital', desc: 'Strategic deployment of funds for high-ROI\ninventory and expansion.', icon: <FaChartLine />, num: '02' },
-    { title: 'Distribution', desc: 'Established network of prime retail\nlocations and vendor partnerships.', icon: <FaHandshake />, num: '03' },
-    { title: 'Execution', desc: 'Proven management team with decades\nof experience in the region.', icon: <FaBullseye />, num: '04' },
-    { title: 'Retail Infrastructure', desc: 'State-of-the-art boutiques designed for\npremium customer experiences.', icon: <FaShoppingBag />, num: '05' },
-    { title: 'Brand Equity', desc: 'Leveraging the Sahmora ecosystem to\ndrive instant recognition and trust.', icon: <FaShieldAlt />, num: '06' }
+  const strengths = [
+    { title: 'UAE market\nknowledge', icon: <HiOutlineGlobeAlt size={34} /> },
+    { title: 'Existing distribution\necosystem', icon: <FaCubes size={34} /> },
+    { title: 'Strong vendor\nrelationships', icon: <FaHandshake size={34} /> },
+    { title: 'Retail and\nHORECA experience', icon: <HiOutlineShoppingBag size={34} /> },
+    { title: 'Luxury market\nexpansion focus', icon: <FaRegGem size={34} /> },
+    { title: 'Operational\nexecution capability', icon: <FaCog size={34} /> },
+    { title: 'Regional growth\nmindset', icon: <HiOutlineTrendingUp size={34} /> },
+    { title: 'Long-term\nbrand-building approach', icon: <HiOutlineUserGroup size={34} /> }
   ];
 
   return (
-    <section id="partnership" className="position-relative p-0" style={{ backgroundColor: '#fcfcfc' }}>
-      
-      {/* Top Dark Section */}
-      <div className="position-relative text-center d-flex flex-column align-items-center justify-content-center" 
-           style={{ 
-             minHeight: '400px', 
-             paddingTop: '5rem',
-             paddingBottom: '8rem',
-             backgroundImage: 'url("/partner_dark_bg.png")',
-             backgroundSize: 'cover',
-             backgroundPosition: 'center',
-             color: '#ffffff'
-           }}>
+    <section id="partnership" className="section-padding" style={{ backgroundColor: '#FAF8F3', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+      <Container className="container-luxury" style={{ maxWidth: '1400px' }}>
         
-        {/* Dark Overlay for better text readability */}
-        <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(5,5,5,0.7)', zIndex: 1 }}></div>
-
-        <div className="position-relative z-10 w-100 px-3">
-          <div className="d-flex align-items-center justify-content-center mb-3">
-            <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent-luxury-gold)' }}></div>
-            <span className="inter text-uppercase fw-bold mx-3" style={{ fontSize: '0.75rem', letterSpacing: '2px', color: 'var(--accent-luxury-gold)' }}>
-              STRONGER TOGETHER
-            </span>
-            <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent-luxury-gold)' }}></div>
-          </div>
+        {/* Top Header Section (Centered) */}
+        <div className="text-center mb-5 pb-4">
+          <h6 className="inter fw-bold tracking-widest mb-3 uppercase" style={{ color: '#A27C37', fontSize: '0.85rem', letterSpacing: '2px' }}>
+            WHY PARTNER WITH SAHMORA
+          </h6>
           
-          <h2 className="cormorant fw-bold mb-3" style={{ fontSize: '4rem' }}>
-            Why Partner <span style={{ color: 'var(--accent-luxury-gold)' }}>With Us</span>
+          <h2 className="cormorant fw-bold mb-4 mx-auto" style={{ fontSize: '3.5rem', color: '#1A1A1A', lineHeight: '1.2', maxWidth: '900px' }}>
+            A Strategic Partner for Brands,<br />
+            Investors, and <span style={{ color: '#A27C37' }}>Growth-Ready Businesses</span>
           </h2>
           
-          <p className="inter mx-auto" style={{ fontSize: '1rem', maxWidth: '600px', lineHeight: '1.6', color: '#e0e0e0' }}>
-            We combine market expertise, financial strength, and operational<br/>excellence to build lasting value for our partners.
+          {/* Divider */}
+          <div className="d-flex align-items-center justify-content-center mb-4">
+            <div style={{ width: '40px', height: '1px', backgroundColor: '#A27C37' }}></div>
+            <div className="mx-2" style={{ width: '6px', height: '6px', backgroundColor: '#A27C37', transform: 'rotate(45deg)' }}></div>
+            <div style={{ width: '40px', height: '1px', backgroundColor: '#A27C37' }}></div>
+          </div>
+          
+          <p className="inter mx-auto" style={{ color: '#4A4A4A', fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '700px' }}>
+            Sahmora Investment LLC brings together capital vision, UAE market understanding, operational experience, and growth-focused leadership.
           </p>
-
-          <div className="mx-auto mt-4" style={{ 
-            width: '8px', height: '8px', 
-            backgroundColor: 'var(--accent-luxury-gold)', 
-            transform: 'rotate(45deg)' 
-          }}></div>
         </div>
 
-        {/* SVG Curve overlapping bottom edge */}
-        <div className="position-absolute bottom-0 start-0 w-100" style={{ zIndex: 2, transform: 'translateY(1px)' }}>
-          <svg viewBox="0 0 100 10" preserveAspectRatio="none" style={{ width: '100%', height: '60px', display: 'block' }}>
-            <path d="M 0 10 L 0 0 Q 50 10 100 0 L 100 10 Z" fill="#f9f9f9" stroke="var(--accent-luxury-gold)" strokeWidth="0.2" />
-          </svg>
-        </div>
-      </div>
-
-      {/* Bottom Marble Section */}
-      <div className="position-relative" style={{ 
-        backgroundImage: 'url("/marble_light_bg.png")', 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center',
-        paddingBottom: '6rem'
-      }}>
-        
-        <Container style={{ marginTop: '-40px', position: 'relative', zIndex: 10, maxWidth: '1200px' }}>
-          
-          <Row className="g-4">
-            {features.map((feature, idx) => (
-              <Col lg={4} md={6} key={idx}>
-                <motion.div 
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-4 text-center position-relative h-100 d-flex flex-column align-items-center"
-                  style={{ 
-                    border: '1px solid rgba(200,166,78,0.2)', 
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.04)',
-                    padding: '3.5rem 1.5rem 2rem'
-                  }}
-                >
-                  {/* Watermark Number */}
-                  <div className="position-absolute cormorant fw-bold" style={{ 
-                    top: '15px', right: '25px', 
-                    fontSize: '4.5rem', 
-                    color: 'rgba(200,166,78,0.07)',
-                    lineHeight: '1',
-                    zIndex: 0
-                  }}>
-                    {feature.num}
-                  </div>
-
-                  {/* Overlapping Top Icon Wrapper */}
-                  <div className="position-absolute rounded-circle d-flex align-items-center justify-content-center shadow-sm" 
-                       style={{ 
-                         width: '56px', height: '56px', 
-                         backgroundColor: '#0a0a0a',
-                         border: '2px solid rgba(200,166,78,0.3)',
-                         top: '-28px',
-                         left: '50%',
-                         transform: 'translateX(-50%)',
-                         zIndex: 2
-                       }}>
-                    <div style={{ color: 'var(--accent-luxury-gold)', fontSize: '1.4rem' }}>
-                      {feature.icon}
-                    </div>
-                  </div>
-
-                  <div className="position-relative z-10">
-                    <h4 className="cormorant fw-bold mb-2" style={{ fontSize: '1.4rem', color: '#1a1a1a' }}>{feature.title}</h4>
-                    <div className="mx-auto mb-3" style={{ width: '25px', height: '2px', backgroundColor: 'var(--accent-luxury-gold)' }}></div>
-                    <p className="inter" style={{ fontSize: '0.8rem', lineHeight: '1.6', color: '#666', whiteSpace: 'pre-line' }}>
-                      {feature.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
-          
-          {/* Bottom Footer Pill */}
-          <div className="mt-5 pt-3">
-            <div className="rounded-pill d-flex flex-column flex-lg-row align-items-center justify-content-between p-2 shadow" 
-                 style={{ backgroundColor: '#111111', border: '1px solid rgba(255,255,255,0.05)' }}>
+        {/* 8-Item Horizontal Grid */}
+        <div className="d-flex flex-wrap justify-content-center align-items-stretch mb-5 pb-4 px-2">
+          {strengths.map((item, idx) => (
+            <div key={idx} className="text-center position-relative mb-4" style={{ flex: '0 0 auto', width: '12.5%', minWidth: '140px' }}>
               
-              <div className="d-flex align-items-center mb-3 mb-lg-0 w-100 ps-2">
-                <div className="rounded-circle d-flex align-items-center justify-content-center me-4" style={{ 
-                  width: '65px', height: '65px', 
-                  background: 'linear-gradient(135deg, rgba(220,186,98,1) 0%, rgba(180,146,58,1) 100%)',
-                  boxShadow: 'inset 0 0 10px rgba(255,255,255,0.3)',
-                  flexShrink: 0
-                }}>
-                  <FaCrown style={{ color: '#111', fontSize: '1.6rem' }} />
+              {/* Icon */}
+              <div className="mb-3 d-flex align-items-center justify-content-center mx-auto rounded-circle position-relative" style={{ width: '80px', height: '80px' }}>
+                <div style={{ color: '#A27C37' }}>
+                  {item.icon}
                 </div>
-                <h4 className="cormorant text-warm-white fw-bold mb-0 text-start" style={{ fontSize: '1.4rem', letterSpacing: '0.5px' }}>
-                  Let's build a legacy of growth, trust & prosperity together.
-                </h4>
               </div>
               
-              <motion.a 
-                href="#contact" 
-                whileHover={{ scale: 1.02 }}
-                className="rounded-pill text-decoration-none fw-bold d-inline-flex align-items-center justify-content-center text-nowrap"
-                style={{ 
-                  background: 'linear-gradient(90deg, #d4af37 0%, #aa8529 100%)',
-                  color: '#111',
-                  padding: '18px 30px',
-                  fontSize: '0.8rem',
-                  letterSpacing: '1px'
-                }}
-              >
-                INITIATE PARTNERSHIP DISCUSSION <span className="ms-2 fs-5" style={{ lineHeight: 0 }}>→</span>
-              </motion.a>
-              
-            </div>
-          </div>
+              {/* Title */}
+              <p className="inter fw-medium px-2" style={{ color: '#1A1A1A', fontSize: '0.8rem', lineHeight: '1.4', whiteSpace: 'pre-line' }}>
+                {item.title}
+              </p>
 
-        </Container>
-      </div>
+              {/* Vertical Separator for desktop */}
+              {idx < strengths.length - 1 && (
+                <div className="d-none d-lg-block position-absolute" style={{ 
+                  right: 0, 
+                  top: '20px',
+                  bottom: '20px',
+                  width: '1px', 
+                  backgroundColor: 'rgba(162, 124, 55, 0.3)' 
+                }}></div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Premium Statement Box */}
+        <div className="mx-auto rounded-3 p-4 p-md-5 d-flex flex-column flex-md-row align-items-center" 
+             style={{ 
+               maxWidth: '1000px', 
+               backgroundColor: '#050709', 
+               boxShadow: '0 15px 40px rgba(0,0,0,0.1)'
+             }}>
+          
+          {/* Custom Geometric Premium Icon */}
+          <div className="me-md-5 mb-4 mb-md-0 flex-shrink-0">
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" stroke="#C8A64E" strokeWidth="1" strokeLinejoin="round"/>
+              <path d="M12 5L13.5 10.5L19 12L13.5 13.5L12 19L10.5 13.5L5 12L10.5 10.5L12 5Z" stroke="#C8A64E" strokeWidth="1" strokeLinejoin="round" opacity="0.6"/>
+              <path d="M12 8L12.5 11.5L16 12L12.5 12.5L12 16L11.5 12.5L8 12L11.5 11.5L12 8Z" stroke="#C8A64E" strokeWidth="1" strokeLinejoin="round" opacity="0.3"/>
+            </svg>
+          </div>
+          
+          {/* Divider Line in Box */}
+          <div className="d-none d-md-block h-100 me-5" style={{ width: '1px', minHeight: '60px', backgroundColor: 'rgba(200, 166, 78, 0.3)' }}></div>
+
+          <div className="text-center text-md-start">
+            <h6 className="inter fw-bold tracking-widest mb-2 uppercase" style={{ color: '#C8A64E', fontSize: '0.85rem', letterSpacing: '2px' }}>
+              PREMIUM STATEMENT
+            </h6>
+            <p className="inter mb-0 fw-medium" style={{ color: '#E0E0E0', fontSize: '1.05rem', lineHeight: '1.7' }}>
+              Sahmora is positioned for partners who want more than investment —<br className="d-none d-md-block"/>
+              they want market access, business discipline, and a platform for regional growth.
+            </p>
+          </div>
+          
+        </div>
+
+      </Container>
     </section>
   );
 };
