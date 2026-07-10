@@ -42,7 +42,7 @@ const Navbar = () => {
           <img 
             src="/SAHMORA logo.png" 
             alt="Sahmora Investment LLC" 
-            style={{ height: '75px', objectFit: 'contain' }} 
+            style={{ height: '95px', objectFit: 'contain' }} 
           />
         </BootstrapNavbar.Brand>
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" className="border-0 shadow-none">

@@ -27,7 +27,7 @@ const Footer = () => {
               <img 
                 src="/SAHMORA logo.png" 
                 alt="Sahmora Investment LLC" 
-                style={{ height: '70px', objectFit: 'contain' }} 
+                style={{ height: '100px', objectFit: 'contain' }} 
               />
             </div>
             <p className="inter text-white-50 pe-lg-5" style={{ fontSize: '0.9rem', lineHeight: '1.8' }}>
