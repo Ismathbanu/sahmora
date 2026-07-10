@@ -28,12 +28,14 @@ const BrandPortfolio = () => {
   const proprietaryBrands = [
     {
       name: "Gremora",
+      type: "SAUCE",
       country: "Proprietary",
       desc: "Sauces, salad dressings, ketchup, and foodservice-ready products.",
       img: "/product-sauces.png"
     },
     {
       name: "Briola",
+      type: "OLIVE OIL",
       country: "Proprietary",
       desc: "Premium olive oil for hospitality, retail, and foodservice customers.",
       img: "/product-olive-oil.png"
@@ -151,7 +153,8 @@ const BrandPortfolio = () => {
                       
                       {/* Fake Logo Text Overlay */}
                       <div className="text-center mb-3 pt-2">
-                        <span className="cormorant fw-bold text-uppercase" style={{ color: '#FFF', fontSize: '1.2rem', letterSpacing: '2px' }}>{brand.name}</span>
+                        <span className="cormorant fw-bold text-uppercase" style={{ color: '#FFF', fontSize: '1.2rem', letterSpacing: '2px' }}>{brand.name}</span><br/>
+                        <span className="inter fw-bold text-uppercase" style={{ color: '#888', fontSize: '0.6rem', letterSpacing: '2px' }}>{brand.type}</span>
                       </div>
                       
                       <div className="mb-4 rounded-3 overflow-hidden position-relative" style={{ height: '160px', backgroundColor: '#060A10' }}>

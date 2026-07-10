@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaLinkedinIn, FaTwitter, FaInstagram, FaArrowUp } from 'react-icons/fa';
 
 const Footer = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
+    <>
     <footer className="bg-matte-black text-warm-white pt-5 pb-4 border-top" style={{ borderTopColor: 'rgba(200, 166, 78, 0.3)', borderTopWidth: '1px', borderTopStyle: 'solid' }}>
       <Container className="container-luxury pt-4">
         <Row className="gy-4">
@@ -45,14 +60,36 @@ const Footer = () => {
           </Col>
         </Row>
         <Row className="mt-5 pt-4 border-top" style={{ borderTopColor: 'rgba(255, 255, 255, 0.1)', borderTopWidth: '1px', borderTopStyle: 'solid' }}>
-          <Col className="text-center">
+          <Col md={6} className="text-center text-md-start mb-3 mb-md-0">
             <p className="inter text-white-50 mb-0" style={{ fontSize: '0.8rem' }}>
               &copy; {new Date().getFullYear()} Sahmora Investment LLC. All rights reserved.
+            </p>
+          </Col>
+          <Col md={6} className="text-center text-md-end">
+            <p className="inter text-white-50 mb-0" style={{ fontSize: '0.8rem' }}>
+              Powered by <a href="https://dgbirdmedia.com/" target="_blank" rel="noopener noreferrer" className="text-decoration-none transition-all" style={{ color: '#C8A64E' }}>DGbird Media</a>
             </p>
           </Col>
         </Row>
       </Container>
     </footer>
+    {/* Scroll to Top Button */}
+    <button 
+      onClick={scrollToTop}
+      className={`position-fixed bottom-0 end-0 m-4 rounded-circle border-0 d-flex align-items-center justify-content-center transition-all ${showScrollTop ? 'opacity-100' : 'opacity-0'}`}
+      style={{ 
+        width: '50px', height: '50px', 
+        backgroundColor: '#C8A64E', color: '#000', 
+        zIndex: 1000,
+        pointerEvents: showScrollTop ? 'auto' : 'none',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+        transform: showScrollTop ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'all 0.3s ease'
+      }}
+    >
+      <FaArrowUp size={20} />
+    </button>
+    </>
   );
 };
 

@@ -20,9 +20,10 @@ const Navbar = () => {
       expand="lg" 
       className={clsx(
         'transition-all duration-300 py-3', 
-        scrolled ? 'bg-matte-black shadow-lg border-bottom border-gold' : 'bg-transparent'
+        scrolled ? 'shadow-lg border-bottom border-gold' : ''
       )}
       style={{
+        backgroundColor: '#000000',
         borderBottomColor: scrolled ? 'rgba(200, 166, 78, 0.2)' : 'transparent',
         borderBottomWidth: '1px',
         borderBottomStyle: 'solid',
@@ -30,9 +31,19 @@ const Navbar = () => {
       }}
     >
       <Container className="container-luxury">
-        <BootstrapNavbar.Brand href="#home" className="text-white d-flex flex-column lh-1">
-          <span className="cormorant fs-3 text-gold tracking-widest text-uppercase">Sahmora</span>
-          <span className="inter text-uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.2em' }}>Investment LLC</span>
+        <BootstrapNavbar.Brand 
+          href="#" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="d-flex align-items-center"
+        >
+          <img 
+            src="/SAHMORA logo.png" 
+            alt="Sahmora Investment LLC" 
+            style={{ height: '75px', objectFit: 'contain' }} 
+          />
         </BootstrapNavbar.Brand>
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" className="border-0 shadow-none">
           <span className="navbar-toggler-icon" style={{ filter: 'invert(1)' }}></span>

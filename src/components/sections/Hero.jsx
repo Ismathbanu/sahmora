@@ -52,41 +52,38 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="position-relative overflow-hidden" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', backgroundColor: '#ffffff' }}>
+    <section className="position-relative overflow-hidden" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', backgroundColor: '#000000' }}>
       
       {/* Background Image */}
       <div className="position-absolute top-0 start-0 w-100 h-100" style={{
-        backgroundImage: `url('/hero-bg.png')`,
+        backgroundImage: `url('/bannerhero.jpeg')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'right center',
+        backgroundPosition: 'top center',
         zIndex: 0
       }}></div>
 
-      {/* Smooth White Gradient Fade on the Left */}
+      {/* Smooth Black Gradient Fade on the Left */}
       <div className="position-absolute top-0 start-0 w-100 h-100" style={{
-        background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 30%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 80%)',
+        background: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 30%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0) 80%)',
         zIndex: 1
       }}></div>
 
-      {/* Top Right Floating Badge */}
-      <GoldBadge />
-      
-      <Container className="position-relative" style={{ zIndex: 10, paddingTop: '10vh' }}>
+      <Container className="position-relative" style={{ zIndex: 10, paddingTop: '15vh' }}>
         <Row className="align-items-center">
           <Col lg={6} xl={6} className="pe-lg-4">
             <div ref={textRef}>
               
-              <h1 className="cormorant text-uppercase fw-bold mb-3" style={{ fontSize: '3rem', lineHeight: '1.2', letterSpacing: '1px', color: '#0d182b' }}>
+              <h1 className="cormorant text-uppercase fw-bold mb-3" style={{ fontSize: '3rem', lineHeight: '1.2', letterSpacing: '1px', color: '#ffffff' }}>
                 TALBAR GOLD & DIAMOND<br/>
                 IS COMING TO THE <span style={{ color: '#C8A64E' }}>UAE</span>
               </h1>
               
-              <h4 className="inter fw-medium mb-3 mt-4" style={{ fontSize: '1.15rem', lineHeight: '1.5', color: '#1a2639' }}>
+              <h4 className="inter fw-medium mb-3 mt-4" style={{ fontSize: '1.15rem', lineHeight: '1.5', color: '#f8f9fa' }}>
                 Introducing the Next Gold & Diamond Retail<br/>
                 Growth Story in the UAE
               </h4>
               
-              <p className="inter mb-4" style={{ fontSize: '0.95rem', lineHeight: '1.7', maxWidth: '90%', color: '#334155' }}>
+              <p className="inter mb-4" style={{ fontSize: '0.95rem', lineHeight: '1.7', maxWidth: '90%', color: '#e2e8f0' }}>
                 A heritage jewellery brand from Muttupettai, Tamil Nadu,<br/> 
                 entering the UAE market with a strategic expansion<br/> 
                 vision powered by Sahmora Investment LLC.
@@ -94,7 +91,7 @@ const Hero = () => {
               
               {/* Vertical Line Block */}
               <div className="position-relative ps-3 mb-5" style={{ borderLeft: '3px solid #C8A64E' }}>
-                <p className="inter mb-0 fw-medium" style={{ fontSize: '0.9rem', lineHeight: '1.6', maxWidth: '85%', color: '#aa8222' }}>
+                <p className="inter mb-0 fw-medium" style={{ fontSize: '0.9rem', lineHeight: '1.6', maxWidth: '85%', color: '#C8A64E' }}>
                   Sahmora Investment LLC is building high-growth<br/>
                   businesses across FMCG, HORECA, retail, luxury,<br/>
                   and investment-backed ventures across the UAE<br/>
@@ -105,7 +102,7 @@ const Hero = () => {
               {/* Buttons */}
               <div className="d-flex flex-wrap gap-3 mt-2">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <a href="#vision" className="btn-luxury px-4 py-3 rounded-2 fw-bold d-flex align-items-center justify-content-center shadow-sm" style={{ backgroundColor: '#0d182b', color: '#ffffff', border: 'none', fontSize: '0.75rem', letterSpacing: '1px' }}>
+                  <a href="#vision" className="btn-luxury px-4 py-3 rounded-2 fw-bold d-flex align-items-center justify-content-center shadow-sm" style={{ backgroundColor: 'rgba(255,255,255,0.05)', color: '#ffffff', border: '1px solid rgba(200,166,78,0.5)', fontSize: '0.75rem', letterSpacing: '1px' }}>
                     EXPLORE TALBAR VISION 
                     <svg className="ms-2" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8A64E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
