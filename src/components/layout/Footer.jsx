@@ -23,9 +23,12 @@ const Footer = () => {
       <Container className="container-luxury pt-4">
         <Row className="gy-4">
           <Col lg={4} md={6}>
-            <div className="d-flex flex-column lh-1 mb-4">
-              <span className="cormorant fs-2 text-gold tracking-widest text-uppercase">Sahmora</span>
-              <span className="inter text-uppercase mt-2 text-white-50" style={{ fontSize: '0.7rem', letterSpacing: '0.2em' }}>Investment LLC</span>
+            <div className="mb-4">
+              <img 
+                src="/SAHMORA logo.png" 
+                alt="Sahmora Investment LLC" 
+                style={{ height: '70px', objectFit: 'contain' }} 
+              />
             </div>
             <p className="inter text-white-50 pe-lg-5" style={{ fontSize: '0.9rem', lineHeight: '1.8' }}>
               Driving luxury retail expansion and premium investments across the GCC and beyond.
