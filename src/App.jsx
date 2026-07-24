@@ -1,24 +1,26 @@
 import React, { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import Vision2030 from './components/sections/Vision2030';
-import TalbarLaunch from './components/sections/TalbarLaunch';
-import WhyUAE from './components/sections/WhyUAE';
-import GoldInvestment from './components/sections/GoldInvestment';
-import UAEExpansion from './components/sections/UAEExpansion';
-import SahmoraEcosystem from './components/sections/SahmoraEcosystem';
-import Vision2050 from './components/sections/Vision2050';
-import WhyPartner from './components/sections/WhyPartner';
-import Contact from './components/sections/Contact';
-import SahmoraPartner from './components/sections/SahmoraPartner';
-import HorecaDivision from './components/sections/HorecaDivision';
-import BrandPortfolio from './components/sections/BrandPortfolio';
-import InvestmentStrategy from './components/sections/InvestmentStrategy';
+
+// Pages
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import WhatWeDo from './pages/WhatWeDo';
+import IndustriesWeServe from './pages/IndustriesWeServe';
+import Talbar from './pages/Talbar';
+import Igrade from './pages/Igrade';
+import ContactUs from './pages/ContactUs';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -48,24 +50,19 @@ function App() {
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Vision2030 />
-        <TalbarLaunch />
-        <WhyUAE />
-        <GoldInvestment />
-        <UAEExpansion />
-        <SahmoraPartner />
-        <SahmoraEcosystem />
-        <HorecaDivision />
-        <BrandPortfolio />
-        <Vision2050 />
-        <InvestmentStrategy />
-        <WhyPartner />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/what-we-do" element={<WhatWeDo />} />
+          <Route path="/industries-we-serve" element={<IndustriesWeServe />} />
+          <Route path="/ventures/talbar" element={<Talbar />} />
+          <Route path="/ventures/igrade" element={<Igrade />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+        </Routes>
       </main>
       <Footer />
     </>
   );
 }
 
-export default App; 
+export default App;
